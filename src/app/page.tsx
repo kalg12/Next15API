@@ -18,6 +18,7 @@ interface HomeProps {
 
 export const getStaticProps: GetStaticProps = async () => {
   const respuesta = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users: User[] = await respuesta.json();
 };
 
 export default function Home({ users }: HomeProps) {
